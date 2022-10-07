@@ -18,8 +18,8 @@ class Tweet extends Model
     public function comment(){
         return $this->belongsTo(Comment::class);
     }
-    public function tweetFeed(){
-        return $this->belongsTo(TweetFeed::class);
+    public function feeds(){
+        return $this->belongsToMany(Feed::class)->using(TweetFeed::class);
     }
 
     public function users(){

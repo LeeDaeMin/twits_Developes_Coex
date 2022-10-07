@@ -14,11 +14,8 @@ class Feed extends Model
     ];
 
 
-    public function tweetFeed(){
-        return $this->belongsTo(TweetFeed::class);
+    public function tweets(){
+        return $this->belongsToMany(Tweet::class);
     }
 
-    public function users(){
-        return $this->hasMany(User::class);
-    }
 }
