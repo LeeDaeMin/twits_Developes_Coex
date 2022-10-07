@@ -21,7 +21,18 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone',
     ];
+
+    public function tweet(){
+        return $this->belongsTo(Tweet::class);
+    }
+    public function feed(){
+        return $this->belongsTo(Feed::class);
+    }
+    public function comment(){
+        return $this->belongsTo(Comment::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
