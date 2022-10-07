@@ -89,7 +89,7 @@ class userController extends Controller
 
             if(!$user){
 
-                return 'Feed Not Found';
+                return 'User Not Found';
 
             }else{
 
@@ -117,7 +117,7 @@ class userController extends Controller
 
             if(!$user){
 
-                return 'Feed Not Found';
+                return 'User Not Found';
 
             }else{
 
