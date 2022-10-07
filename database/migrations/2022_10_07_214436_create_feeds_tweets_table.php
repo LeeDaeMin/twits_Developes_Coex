@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('feeds_tweets', function (Blueprint $table) {
             $table->id();
-            $table->string('message');
-            $table->foreignId('user_id')->constrained('users')->ondelete('cascade');
-            $table->foreignId('tweet_id')->constrained('tweets')->ondelete('cascade');
+            $table->foreignId('feeds_id')->constrained('feeds')->ondelete('cascade');
+            $table->foreignId('tweets_id')->constrained('tweets')->ondelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('feeds_tweets');
     }
 };
